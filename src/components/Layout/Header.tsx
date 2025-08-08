@@ -9,13 +9,13 @@ interface HeaderProps {
 
 export const Header = ({ currentPage, onPageChange }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    // const handleScroll = () => {
+    //   setIsScrolled(window.scrollY > 50);
+    // };
 
     const darkMode = localStorage.getItem('darkMode') === 'true';
     setIsDarkMode(darkMode);
@@ -23,8 +23,8 @@ export const Header = ({ currentPage, onPageChange }: HeaderProps) => {
       document.documentElement.classList.add('dark');
     }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // window.addEventListener('scroll', handleScroll);
+    // return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleDarkMode = () => {
@@ -45,9 +45,7 @@ export const Header = ({ currentPage, onPageChange }: HeaderProps) => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'navbar-blur shadow-lg' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar-blur shadow-lg`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
