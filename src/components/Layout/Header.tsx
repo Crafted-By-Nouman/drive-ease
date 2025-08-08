@@ -120,9 +120,7 @@ export const Header = ({ currentPage, onPageChange }: HeaderProps) => {
   const navItems = [
     { name: "Home", id: "home" },
     { name: "Cars", id: "cars" },
-    { name: "Book", id: "booking" },
     { name: "Owner", id: "owner" },
-    { name: "Profile", id: "profile" },
     { name: "Contact", id: "contact" },
   ];
 
@@ -201,7 +199,7 @@ export const Header = ({ currentPage, onPageChange }: HeaderProps) => {
                         setAuthMode("login");
                         setError("");
                       }}
-                      className="text-foreground hover:text-accent">
+                      className="text-foreground">
                       <LogIn className="h-4 w-4 mr-2" />
                       Login
                     </Button>
